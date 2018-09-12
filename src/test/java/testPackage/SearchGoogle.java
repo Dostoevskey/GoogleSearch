@@ -1,4 +1,4 @@
-package TestPackage;
+package testPackage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class SearchGoogle {
 
     protected WebDriver driver;
-//    public WebDriverWait wait;
+//    public WebDriverWait wait; --Ask Anton
 
     @BeforeTest
     public final void setupTest() {
