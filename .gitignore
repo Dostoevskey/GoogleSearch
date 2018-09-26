@@ -67,7 +67,8 @@ fabric.properties
 ### Example user template
 
 # IntelliJ project files
-#.idea
 *.iml
 out
 gen
+/.idea/
+/.idea/checkstyle-idea.xml
