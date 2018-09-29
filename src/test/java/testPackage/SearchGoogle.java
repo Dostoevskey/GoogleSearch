@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 public class SearchGoogle {
 
-    protected WebDriver driver;
+    private WebDriver driver;
 
     @BeforeTest
     public void setupTest() {
@@ -30,14 +30,21 @@ public class SearchGoogle {
                 getText(), "Selenium - Web Browser Automation");
 
         driver.findElement(By.cssSelector("#hdtb-msb-vis div:nth-child(3) a")).click();
-        driver.findElement(By.xpath("//img[@id='1kNJvnyWka1zxM:']")).isDisplayed();
-        driver.findElement(By.xpath("//img[@id='1kNJvnyWka1zxM:']")).click();
+        //ToDo Google opyat` izmenil context... Pogovorim ob etom zavtra.
+        //ToDo Special`no ostavil dlya tebya eti predidushee locatori, chto bi ti videl, chto takaya kartinka deistvitel`no otsutstvuet na stranice.
+        //driver.findElement(By.xpath("//img[@id='1kNJvnyWka1zxM:']")).isDisplayed();
+        //driver.findElement(By.xpath("//img[@id='1kNJvnyWka1zxM:']")).click();
+        driver.findElement(By.xpath("//img[@id='bi_EQbbxaRl0hM:']")).isDisplayed();
+        driver.findElement(By.xpath("//img[@id='bi_EQbbxaRl0hM:']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath
-                ("//span[@class='irc_su' and contains(.,'GitHub - SeleniumHQ/selenium: A browser automation framework and ecosystem.')]")));
+                //        ("//span[@class='irc_su' and contains(.,'GitHub - SeleniumHQ/selenium: A browser automation framework and ecosystem.')]")));
+                        ("//span[@class='irc_ho' and contains(.,'Selenium')]")));
+
         Assert.assertEquals(driver.findElement(By.xpath
-                ("//span[@class='irc_su' and contains(.,'GitHub - SeleniumHQ/selenium: A browser automation framework and ecosystem.')]")).
-                getText(), "GitHub - SeleniumHQ/selenium: A browser automation framework and ecosystem.");
+//                ("//span[@class='irc_su' and contains(.,'GitHub - SeleniumHQ/selenium: A browser automation framework and ecosystem.')]")).
+//                getText(), "GitHub - SeleniumHQ/selenium: A browser automation framework and ecosystem.");
+        ("//span[@class='irc_ho' and contains(.,'Selenium')]")).getText(), "Selenium");
 
         driver.findElement(By.cssSelector("#hdtb-msb-vis div:nth-child(1) a")).isEnabled();
         driver.findElement(By.cssSelector("#hdtb-msb-vis div:nth-child(1) a")).click();
